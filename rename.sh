@@ -1,3 +1,5 @@
+[[ -z $1 ]] && echo "please run ./rename.sh [NEW PROJECT NAME]" && exit
+
 FILES= rg -l -g "!rename.sh" "CHANGEME" .
 
 echo "Renaming project to ${1}"
