@@ -5,8 +5,9 @@
     "license": "ISC",
     "author": "Arthur Petroff",
     "scripts": {
-        "dev:client": "cd client && npm run dev",
-        "dev:server": "cd server && npm run dev",
+        "init": "npm install",
+        "dev:client": "export NODE_ENV=DEV && cd client && npm run dev",
+        "dev:server": "export NODE_ENV=DEV && cd server && npm run dev",
         "dev": "if ! command -v tmux ; then echo 'tmux is not installed! please run dev:client and dev:server separately!' >&2 && exit 1; fi && npm run dev:confirmed",
         "dev:confirmed": "tmux new-session -s 'CHANGEME (dev)' 'npm run dev:server' \\; split-window 'npm run dev:client' \\; select-layout even-horizontal \\;",
         "build": "cd client && npm run build",
